@@ -1,0 +1,193 @@
+@import "./var";
+@mixin font($font_name, $file_name, $weight, $style) {
+  @font-face {
+    font-family: $font_name;
+    font-display: swap;
+    src:
+      local("#{file_name}"),
+      url("/src/assets/fonts/#{$file_name}.woff") format("woff"),
+      url("/src/assets/fonts/#{$file_name}.woff2") format("woff2");
+    font-weight: #{$weight};
+    font-style: #{$style};
+  }
+}
+
+@mixin Play-400 {
+  font: {
+    family: "Play", sans-serif;
+    weight: 400;
+    size: 24px;
+  }
+}
+@mixin Play-700 {
+  font: {
+    family: "Play", sans-serif;
+    weight: 700;
+    size: 24px;
+  }
+}
+@mixin OpenSans-700 {
+  font: {
+    family: "OpenSans", sans-serif;
+    weight: 700;
+    size: 24px;
+  }
+}
+
+@mixin theme {
+  @media (prefers-color-scheme: dark) {
+    .loginContainer {
+      background: #121c25;
+    }
+    .close {
+      background: #121c25;
+    }
+    .item svg {
+      path {
+        fill: $content-disabled;
+      }
+    }
+    .secondary {
+      cursor: pointer;
+      @include Play-700;
+      margin-top: 24px;
+      background: transparent;
+      outline: none;
+      border: none;
+      font-size: 18px;
+      color: $content-primary;
+      border-bottom: 1px solid transparent;
+      transition: border 0.3s ease-in-out;
+      &:hover {
+        border-color: $background-brand-hovered;
+      }
+    }
+    .registerText {
+      color: $content-primary;
+    }
+    input {
+      padding: 16px 0;
+      padding-left: 52px;
+      border: 1px solid transparent;
+      width: 100%;
+      border-radius: 8px;
+      background: $background-secondary;
+      color: $content-primary;
+      font-size: 18px;
+      &::placeholder {
+        transition: color 0.3s ease-in-out;
+        color: $background-disabled;
+      }
+      &:hover,
+      &:focus {
+        border: 1px solid $content-active;
+        &::placeholder {
+          color: rgba(255, 255, 255, 0.4);
+        }
+      }
+      &.error {
+        border: 1px solid #ff7575;
+      }
+    }
+    // .title {
+    //   @include OpenSans-700;
+    //   font-size: 24px;
+    //   line-height: 133%;
+    //   text-align: center;
+    //   color: $content-primary;
+    //   margin-bottom: 24px;
+    // }
+  }
+
+  @media (prefers-color-scheme: light) {
+    .loginContainer {
+      background: $background-white;
+    }
+    & .close {
+      background: $background-white;
+    }
+    & .item svg {
+      path {
+        fill: $content-placeholder;
+      }
+    }
+    .secondary {
+      cursor: pointer;
+      @include Play-700;
+      margin-top: 24px;
+      background: transparent;
+      outline: none;
+      border: none;
+      font-size: 18px;
+      color: $content-black;
+      border-bottom: 1px solid transparent;
+      transition: border 0.3s ease-in-out;
+      &:hover {
+        border-color: $background-brand-hovered;
+      }
+    }
+    .registerText {
+      color: $content-black;
+    }
+    input {
+      padding: 16px 0;
+      padding-left: 52px;
+      width: 100%;
+      border: 1px solid $content-placeholder;
+      border-radius: 8px;
+      background: $background-white;
+      color: $content-black;
+      &::placeholder {
+        transition: 0.3s ease-in-out;
+        color: $content-placeholder;
+      }
+      &:hover,
+      &:focus {
+        border-color: $content-active;
+        background: rgba(255, 255, 255, 0.15);
+      }
+      // &.error {
+      //   border: 1px solid #ff7575;
+      // }
+    }
+    // .error {
+    //   input {
+    //     border: 1px solid #ff7575;
+    //   }
+    //   svg path {
+    //     fill: #ff7575;
+    //   }
+    // }
+    // .title {
+    //   @include OpenSans-700;
+    //   font-size: 24px;
+    //   line-height: 133%;
+    //   text-align: center;
+    //   color: $content-black;
+    //   margin-bottom: 24px;
+    // }
+  }
+}
+
+@mixin ContainerDef {
+  @include Play-400;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@mixin Container {
+  @include ContainerDef;
+  max-width: 1440px;
+  padding: 0 80px;
+}
+
+@mixin ContainerMobile {
+  @include ContainerDef;
+  padding: 0 20px;
+}
+
+@mixin mw1024 {
+  @media (max-width: 1025px) {
+    @content;
+  }
+}

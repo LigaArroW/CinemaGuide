@@ -1,0 +1,45 @@
+@import "../../assets/scss/mixin";
+
+.userInfo {
+    @include Container;
+    margin-top: 64px;
+
+    @include mw1024 {
+        @include ContainerMobile;
+    }
+
+    .title {
+        @include Play-700;
+        font-size: 48px;
+        color: $content-primary;
+        line-height: 117%;
+        margin-bottom: 64px;
+        @include mw1024 {
+            font-size: 24px;
+        }
+    }
+    .navigateBlock {
+        display: flex;
+        align-items: center;
+        gap: 64px;
+        @include mw1024 {
+            gap: 24px;
+        }
+    }
+    .item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 72px;
+
+        & span {
+            font-size: 24px;
+            line-height: 133%;
+        }
+
+        & .iconMob {
+            width: 24px;
+            height: 24px;
+        }
+    }
+}

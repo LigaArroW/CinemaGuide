@@ -1,0 +1,51 @@
+// @import "../../../main.global.scss";
+@import '../../../assets/scss/mixin';
+
+.menu,
+.nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    flex: 1;
+}
+
+.menu {
+    .nav {
+        .item {
+            & .iconMob {
+                display: none;
+                @include mw1024 {
+                    display: inline-block;
+                }
+            }
+
+            & span {
+                display: inline;
+            }
+
+            @include mw1024 {
+                width: 24px;
+                height: 24px;
+                & span {
+                    display: none;
+                }
+            }
+        }
+    }
+    @include mw1024 {
+        &{
+            flex: none;
+            margin-left: auto;
+            gap: 22px;
+        }
+        .mobile {
+            display: none;
+        }
+    }
+}
+
+// .nav{
+//     flex: 1;
+// }

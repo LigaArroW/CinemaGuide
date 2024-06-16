@@ -1,0 +1,114 @@
+@import "../../assets/scss/mixin";
+.footer {
+    @include Container;
+    margin-top: auto;
+    padding-top: 48px;
+    padding-bottom: 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include mw1024 {
+        @include ContainerMobile;
+        padding-top: 24px;
+        padding-bottom: 24px;
+        flex-direction: column;
+        gap: 32px;
+        // justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    .titleBlock {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        @include mw1024 {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+
+    .title {
+        @include Play-700;
+        font-size: 18px;
+        line-height: 133%;
+        color: $content-primary;
+    }
+
+    .socialBlock {
+        display: flex;
+        gap: 24px;
+    }
+
+    .copyright {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+
+        .copyrightIcon {
+            // width: 40px;
+            // height: 40px;
+            width: 24px;
+            height: 24px;
+            svg {
+                path {
+                    fill: $content-secondary;
+                }
+            }
+            @include mw1024 {
+                width: 20px;
+                height: 20px;
+                svg path {
+                    fill: $content-disabled;
+                }
+            }
+        }
+
+        .text {
+            font-size: 18px;
+            line-height: 133%;
+            color: $content-secondary;
+            @include mw1024 {
+                font-size: 14px;
+                line-height: 143%;
+                color: $content-disabled;
+            }
+        }
+    }
+
+    .icon {
+        cursor: pointer;
+        svg {
+            // width: 13px;
+            // height: 13px;
+            width: 24px;
+            height: 24px;
+            path {
+                fill: $content-primary;
+            }
+        }
+
+        &.social {
+            padding: 6px 8px;
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            @include mw1024 {
+                width: 24px;
+                height: 24px;
+            }
+        }
+
+        &:hover {
+            border-color: $background-brand-hovered;
+            svg path {
+                fill: $background-brand-hovered;
+            }
+        }
+    }
+}

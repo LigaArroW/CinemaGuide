@@ -1,0 +1,112 @@
+// @import "../../../../main.global.scss";
+@import "../../../../assets/scss/mixin";
+// @import '../../../../assets/scss/var';
+
+.search {
+    // min-width: 559px;
+    position: relative;
+    flex: 2;
+    & svg {
+        cursor: pointer;
+
+        path {
+            fill: $content-primary;
+        }
+    }
+
+    .searchBlock {
+        display: flex;
+        align-items: center;
+    }
+
+    .iconClose {
+        width: 24px;
+        height: 24px;
+    }
+
+    @include mw1024 {
+        // @include ContainerMobile;
+        .iconMob {
+            // position: absolute;
+            // right: 16px;
+            width: 24px;
+            height: 24px;
+        }
+
+        .iconClose {
+            position: absolute;
+            right: 16px;
+        }
+        // min-width: 0;
+    }
+    // .swiper {
+    //     position: absolute;
+    //     left: 0;
+    //     right: 0;
+    //     top: calc(100% + 24px);
+    //     background: $background-secondary;
+    //     border-radius: 8px;
+    //     display: flex;
+    //     flex-direction: column;
+    //     padding: 8px;
+    //     @include mw1024 {
+    //         position: fixed;
+    //         left: 20px;
+    //         top: 57%;
+    //         width: calc(100% - 40px);
+    //         flex-direction: row;
+    //     }
+    // }
+    // .slider {
+    //     user-select: none;
+    //     cursor: pointer;
+    //     width: 100%;
+    //     height: auto !important;
+    //     padding: 20px 8px;
+    //     border: 1px solid transparent;
+    //     border-radius: 6px;
+    //     transition: border-color 0.3s ease;
+    //     &:hover {
+    //         border-color: $content-disabled;
+    //     }
+    // }
+}
+
+.label {
+    width: 100%;
+    background: $background-secondary;
+    display: flex;
+    align-items: center;
+    padding-left: 18px;
+    border-radius: 8px;
+    min-width: 17%;
+
+    & svg {
+        width: 21px;
+        height: 21px;
+        path {
+            fill: $content-disabled;
+        }
+    }
+
+    .input {
+        width: 87%;
+        padding: 12px 0;
+        padding-left: 16px;
+        color: $content-disabled;
+        background: $background-secondary;
+        border: none;
+        font-size: 18px;
+    }
+
+    @include mw1024 {
+        & {
+            position: fixed;
+            left: 20px;
+            top: 16px;
+            // right: -20px;
+            width: calc(100% - 40px);
+            z-index: 100;
+        }
+    }
+}

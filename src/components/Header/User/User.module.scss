@@ -1,0 +1,21 @@
+@import '../../../assets/scss/mixin';
+
+.user{
+    display: flex;
+    align-items: center;
+
+    & span{
+        display: inline;
+        @include mw1024 {
+            display: none;
+        }
+    }
+    & .iconMob{
+        width: 24px;
+        height: 24px;
+        display: none;
+        @include mw1024 {
+            display: inline-block;
+        }
+    }
+}

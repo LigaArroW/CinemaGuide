@@ -1,0 +1,23 @@
+@import "../../assets/scss/mixin";
+.genres {
+    @include Container;
+    @include mw1024 {
+        @include ContainerMobile;
+    }
+    padding-top: 64px;
+    .title {
+        @include Play-700;
+        font-size: 48px;
+        color: $content-primary;
+        line-height: 117%;
+        margin-bottom: 64px;
+        @include mw1024 {
+            font-size: 24px;
+        }
+    }
+    .genresBlock{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px 64px; 
+    }
+}

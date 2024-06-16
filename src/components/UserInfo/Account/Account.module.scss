@@ -1,0 +1,77 @@
+@import "../../../assets/scss/mixin";
+
+.account {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+
+    .profileBlock {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .profile {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .ava {
+        border-radius: 36px;
+        background: $background-disabled;
+        @include Play-700;
+        font-size: 24px;
+        line-height: 133%;
+        color: $content-primary;
+        padding: 14px;
+
+        & span {
+            padding: 4px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            & svg {
+                width: 24px;
+                height: 24px;
+                & path {
+                    fill: $content-primary;
+                }
+            }
+        }
+    }
+
+    .info {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .descript {
+        font-size: 18px;
+        line-height: 133%;
+        color: $content-primary;
+
+        @include mw1024 {
+            font-size: 14px;
+            color: $content-disabled;
+            line-height: 143%;
+        }
+    }
+    .name {
+        @include Play-700;
+        font-size: 24px;
+        line-height: 133%;
+        color: $content-primary;
+        @include mw1024 {
+            text-wrap: wrap;
+            font-size: 18px;
+            line-height: 133%;
+        }
+    }
+    .btn{
+        @include mw1024 {
+            width: calc(100% - 40px);
+        }
+    }
+}

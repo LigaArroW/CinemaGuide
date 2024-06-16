@@ -1,0 +1,98 @@
+@import "../../../assets/scss/mixin";
+.genreFilms {
+    @include Container;
+    padding-top: 64px;
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+
+    @include mw1024 {
+        @include ContainerMobile;
+    }
+    .films {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 40px 64px;
+        @include mw1024 {
+            flex-direction: column;
+            gap: 40px;
+        }
+    }
+
+    .link {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 64px;
+        // transition:
+        //     color 0.3s ease,
+        //     fill 0.3s ease;
+        &:hover {
+            .title {
+                color: $background-brand-active;
+            }
+            .icon {
+                svg path {
+                    fill: $background-brand-active;
+                }
+            }
+        }
+
+        @include mw1024 {
+            margin-bottom: 0;
+            gap: 8px;
+        }
+
+        .title {
+            @include Play-700;
+            font-size: 48px;
+            color: $content-primary;
+            line-height: 117%;
+            transition: color 0.3s ease;
+            @include mw1024 {
+                font-size: 24px;
+            }
+        }
+
+        .icon {
+            svg {
+                width: 40px;
+                height: 40px;
+                path {
+                    transition: fill 0.3s ease;
+                    fill: $content-primary;
+                }
+            }
+        }
+    }
+
+    .poster {
+        width: 224px;
+        height: 336px;
+        @include mw1024 {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .img {
+        // object-fit: cover;
+        // object-position: 50% 50%;
+        cursor: pointer;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        border-radius: 16px;
+        box-shadow: 0 0 80px 0 rgba(255, 255, 255, 0.33);
+        transition:
+            border-color 0.3s ease,
+            transform 0.3s ease-in-out;
+        &:hover {
+            border-color: $background-brand-active;
+            transform: translateY(-4px);
+        }
+    }
+
+    .btn {
+        align-self: center;
+    }
+}

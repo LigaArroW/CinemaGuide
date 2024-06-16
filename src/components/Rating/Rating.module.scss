@@ -1,0 +1,34 @@
+@import "../../main.global.scss";
+
+.rating {
+    padding: 4px 12px;
+    border-radius: 16px;
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+
+    & svg {
+        width: 16px;
+        height: 16px;
+        & path {
+            fill: $content-primary;
+        }
+    }
+}
+
+.stars {
+    @include Play-700;
+    font-size: 18px;
+    color: $content-primary;
+}
+
+.small {
+    border-radius: 16px;
+    padding: 2px 8px;
+
+    .stars {
+        font-size: 12px;
+    }
+}

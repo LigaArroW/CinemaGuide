@@ -1,0 +1,22 @@
+@import '../../assets/scss/mixin';
+
+
+    .small {
+        padding: 16px 22px;
+        & span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            svg {
+                width: 24px;
+                height: 24px;
+            }
+        }
+
+        @include mw1024 {
+            flex: 1;
+            padding: 16px 20px;
+        }
+    }
+

@@ -1,0 +1,129 @@
+@import "../../assets/scss/mixin";
+
+.login {
+    @include theme;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+
+    .loginContainer {
+        // @include theme;
+        // background: $background-white;
+        border-radius: 24px;
+        padding: 64px 40px;
+        position: relative;
+    }
+
+    .form {
+        & span {
+            align-self: center;
+        }
+        width: 100%;
+        display: flex;
+        // align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .close {
+        cursor: pointer;
+        position: absolute;
+        padding: 12px;
+        border-radius: 100%;
+        // background: $background-white;
+        top: 0;
+        right: -12%;
+        display: flex;
+        align-items: center;
+
+        & svg {
+            width: 24px;
+            height: 24px;
+            path {
+                fill: $background-black;
+            }
+        }
+        @include mw1024 {
+            right: 0;
+        }
+    }
+
+    .logo {
+        margin-bottom: 40px;
+        svg {
+            width: 180px;
+        }
+    }
+
+    .btn {
+        align-self: center;
+    }
+
+    .registerText {
+        text-align: center;
+        margin-bottom: 24px;
+    }
+}
+
+.list {
+    @include theme;
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 12px;
+    margin-bottom: 24px;
+    .item {
+        position: relative;
+        &:has(.error) {
+            border-color: #ff7575;
+            svg path {
+                fill: #ff7575;
+            }
+        }
+
+        & span {
+            position: absolute;
+            left: 16px;
+            top: 14px;
+            & svg {
+                width: 24px;
+                height: 24px;
+            }
+        }
+    }
+
+    .btn {
+        align-self: center;
+    }
+}
+.title {
+    @include OpenSans-700;
+    font-size: 24px;
+    line-height: 133%;
+    text-align: center;
+    margin-bottom: 24px;
+    @media (prefers-color-scheme: light) {
+        color: $content-black;
+    }
+    @media (prefers-color-scheme: dark) {
+        color: $content-primary;
+    }
+}
+
+.userExist {
+    text-align: center;
+    font-size: 18px;
+    color: #ff7575;
+}
+

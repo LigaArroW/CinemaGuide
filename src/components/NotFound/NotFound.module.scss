@@ -1,0 +1,22 @@
+@import "../../assets/scss/mixin";
+.notFound {
+    @include Container;
+    padding-top: 64px;
+    padding-bottom: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include mw1024 {
+        @include ContainerMobile;
+    }
+    .title {
+        @include Play-700;
+        font-size: 52px;
+        color: $content-primary;
+        line-height: 117%;
+        margin-bottom: 64px;
+        @include mw1024 {
+            font-size: 24px;
+        }
+    }
+}

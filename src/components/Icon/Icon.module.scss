@@ -1,0 +1,24 @@
+// .noTheme {
+//     svg path {
+//         fill: white;
+//     }
+// }
+// .theme {
+//     svg path {
+//         fill: black;
+//     }
+// }
+.display {
+    display: inline-block;
+}
+
+@media (prefers-color-scheme: dark) {
+    .theme svg path {
+        fill: black;
+    }
+}
+@media (prefers-color-scheme: light) {
+    .theme svg path {
+        fill: white;
+    }
+}

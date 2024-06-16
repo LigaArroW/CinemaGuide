@@ -1,0 +1,32 @@
+@import "../../../../../assets/scss/mixin";
+.swiper {
+    position: fixed;
+    // left: 0;
+    // right: 0;
+    // top: calc(100% + 24px);
+    background: $background-secondary;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    @include mw1024 {
+        position: fixed;
+        left: 20px;
+        top: 57%;
+        width: calc(100% - 40px);
+        flex-direction: row;
+    }
+}
+.slider {
+    user-select: none;
+    cursor: pointer;
+    width: 100%;
+    height: auto !important;
+    padding: 20px 8px;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    transition: border-color 0.3s ease;
+    &:hover {
+        border-color: $content-disabled;
+    }
+}

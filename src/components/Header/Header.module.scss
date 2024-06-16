@@ -1,0 +1,39 @@
+// @import "../../main.global.scss";
+@import "../../assets/scss/mixin";
+
+.header {
+    backdrop-filter: blur(20px);
+    background: rgba(0, 0, 0, 0.5);
+    .content {
+        @include Container;
+        padding-top: 24px;
+        padding-bottom: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 80px;
+        position: relative;
+    }
+
+    .logo {
+        flex: 1;
+    }
+
+    @include mw1024 {
+        & {
+            // @include ContainerMobile;
+            padding-top: 18px;
+            padding-bottom: 18px;
+            gap: 22px;
+        }
+
+        .content {
+            @include ContainerMobile;
+            gap: 22px;
+        }
+
+        .logo svg {
+            max-width: 136px;
+        }
+    }
+}
