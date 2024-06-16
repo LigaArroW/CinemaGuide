@@ -42,17 +42,17 @@ function App() {
       <Header />
       <Routes>
         <Route path='/' element={<Navigate to='/main' replace />} />
-        <Route path='main' element={<Main />} />
-        <Route path='genres'>
+        <Route path='/main' element={<Main />} />
+        <Route path='/genres'>
           <Route index element={<Genres />} />
-          <Route path=':genre' element={<GenreFilms />} />
+          <Route path='/:genre' element={<GenreFilms />} />
         </Route>
-        <Route path='user' element={<UserInfo />} >
+        <Route path='/user' element={<UserInfo />} >
           <Route index element={<Navigate to='favorite' replace />} />
-          <Route path='favorite' element={<Favorites />} />
-          <Route path='account' element={<Account />} />
+          <Route path='/favorite' element={<Favorites />} />
+          <Route path='/account' element={<Account />} />
         </Route>
-        <Route path='film/:title' element={<InfoFilm />} />
+        <Route path='/film/:title' element={<InfoFilm />} />
         <Route path="404" element={<NotFound />} />
         <Route path="*" element={<Navigate to="/404" replace />} />
       </Routes>
