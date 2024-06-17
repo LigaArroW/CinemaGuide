@@ -13,7 +13,8 @@ import ReactDOM from 'react-dom';
 import { useGetProfile } from '../../assets/hook/useGetProfile';
 import { useAuth } from '../../Store/useModal';
 import { createName } from '../../util/createName';
-import Mail from '../../assets/mail.svg?react'
+
+
 
 
 interface LoginProps {
@@ -142,8 +143,7 @@ export const Login: FC<LoginProps> = () => {
                       ?
                       <ul className={styles.list}>
                         <li className={styles.item}>
-                            {/* <Icon name={EIcon.Mail} /> */}
-                            <Mail />
+                          <Icon name={EIcon.Mail} />
                           <Field type="mail" name="email" placeholder="Электронная почта" className={`${errors.email && touched.email ? styles.error : ''}`}
 
                           />

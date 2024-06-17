@@ -1,8 +1,8 @@
 import { FC } from 'react';
 import styles from './Icon.module.scss';
 import classNames from 'classnames';
-import { Burger, Phone, Check, InfoN, SendN, GenresN, CommentN, StarN, ChevronN, EditN, SearchN, LoaderN, KeyN, UserD, FavoriteD, CloseD, PlayerD, Logo, RefreshN, VK, GitHub, Copyright } from '../icons';
-import Mail from '../../assets/mail.svg?react'
+import { Burger, Phone, Mail, Check, InfoN, SendN, GenresN, CommentN, StarN, ChevronN, EditN, SearchN, LoaderN, KeyN, UserD, FavoriteD, CloseD, PlayerD, Logo, RefreshN, VK, GitHub, Copyright } from '../icons';
+// import Mail from '../../assets/mail.svg?react'
 
 
 // eslint-disable-next-line react-refresh/only-export-components
@@ -75,7 +75,16 @@ export const Icon: FC<IconProps> = ({ name, theme, double = false, onClick, prop
 
   return (
     <span className={style} onClick={onClick} >
-      {componentArray.find(names => names.type.name === name)}
+
+      {componentArray.find(names => {
+        if(name === 'Mail'){
+          console.log(names.type.name, name);
+          console.log(names);
+          
+        }
+        
+        return names.type.name === name
+      })}
     </span>
   )
 };
