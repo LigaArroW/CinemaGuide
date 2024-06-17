@@ -43,33 +43,89 @@ interface IconProps {
   prop?: string
 }
 
+const renderComponent = (name: EIcon, double = false) => {
+  switch (name) {
+    case EIcon.Burger:
+      return <Burger />
+    case EIcon.Mail:
+      return <Mail />
+    case EIcon.Phone:
+      return <Phone />
+    case EIcon.Copyright:
+      return <Copyright />
+    case EIcon.Check:
+      return <Check />
+    case EIcon.InfoN:
+      return <InfoN />
+    case EIcon.SendN:
+      return <SendN />
+    case EIcon.GenresN:
+      return <GenresN />
+    case EIcon.CommentN:
+      return <CommentN />
+    case EIcon.StarN:
+      return <StarN />
+    case EIcon.ChevronN:
+      return <ChevronN />
+    case EIcon.EditN:
+      return <EditN />
+    case EIcon.SearchN:
+      return <SearchN />
+    case EIcon.LoaderN:
+      return <LoaderN />
+    case EIcon.KeyN:
+      return <KeyN />
+    case EIcon.UserD:
+      return <UserD double={double} />
+    case EIcon.FavoriteD:
+      return <FavoriteD double={double} />
+    case EIcon.CloseD:
+      return <CloseD double={double} />
+    case EIcon.PlayerD:
+      return <PlayerD double={double} />
+    case EIcon.Logo:
+      return <Logo />
+    case EIcon.RefreshN:
+      return <RefreshN />
+    case EIcon.VK:
+      return <VK />
+    case EIcon.GitHub:
+      return <GitHub />
+    case EIcon.Mail:
+      return <Mail />
+    default:
+      return ''
+  }
+}
+
+
 export const Icon: FC<IconProps> = ({ name, theme, double = false, onClick, prop }) => {
   // export const Icon: FC<IconProps> = ({ name, theme, onClick, prop }) => {
-  const componentArray = [
-    <Burger />,
-    <Mail />,
-    <Phone />,
-    <Copyright />,
-    <Check />,
-    <InfoN />,
-    <SendN />,
-    <GenresN />,
-    <CommentN />,
-    <StarN />,
-    <ChevronN />,
-    <EditN />,
-    <SearchN />,
-    <LoaderN />,
-    <KeyN />,
-    <UserD double={double} />,
-    <FavoriteD double={double} />,
-    <CloseD double={double} />,
-    <PlayerD double={double} />,
-    <Logo />,
-    <RefreshN />,
-    <VK />,
-    <GitHub />
-  ]
+  // const componentArray = [
+  //   <Burger />,
+  //   <Mail />,
+  //   <Phone />,
+  //   <Copyright />,
+  //   <Check />,
+  //   <InfoN />,
+  //   <SendN />,
+  //   <GenresN />,
+  //   <CommentN />,
+  //   <StarN />,
+  //   <ChevronN />,
+  //   <EditN />,
+  //   <SearchN />,
+  //   <LoaderN />,
+  //   <KeyN />,
+  //   <UserD double={double} />,
+  //   <FavoriteD double={double} />,
+  //   <CloseD double={double} />,
+  //   <PlayerD double={double} />,
+  //   <Logo />,
+  //   <RefreshN />,
+  //   <VK />,
+  //   <GitHub />
+  // ]
 
 
   const style = classNames(
@@ -79,7 +135,7 @@ export const Icon: FC<IconProps> = ({ name, theme, double = false, onClick, prop
   return (
     <span className={style} onClick={onClick} >
 
-      {componentArray.find(names => {
+      {/* {componentArray.find(names => {
         if (name === 'Mail') {
           console.log(names.type.name, name);
           console.log(names);
@@ -88,8 +144,8 @@ export const Icon: FC<IconProps> = ({ name, theme, double = false, onClick, prop
         }
 
         return names.type.name === EIcon[name]
-      })}
-      <KeyN />
+      })} */}
+      {renderComponent(name, double)}
     </span>
   )
 };
