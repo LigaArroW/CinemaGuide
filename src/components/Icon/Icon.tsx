@@ -44,7 +44,7 @@ interface IconProps {
 }
 
 export const Icon: FC<IconProps> = ({ name, theme, double = false, onClick, prop }) => {
-// export const Icon: FC<IconProps> = ({ name, theme, onClick, prop }) => {
+  // export const Icon: FC<IconProps> = ({ name, theme, onClick, prop }) => {
   const componentArray = [
     <Burger />,
     <Mail />,
@@ -80,17 +80,16 @@ export const Icon: FC<IconProps> = ({ name, theme, double = false, onClick, prop
     <span className={style} onClick={onClick} >
 
       {componentArray.find(names => {
-        if(name === 'Mail'){
+        if (name === 'Mail') {
           console.log(names.type.name, name);
           console.log(names);
-          console.log(EIcon);
-          console.log(EIcon[name],'и последняя');
-          
+
+
         }
-        
+
         return names.type.name === EIcon[name]
       })}
-
+      <KeyN />
     </span>
   )
 };
