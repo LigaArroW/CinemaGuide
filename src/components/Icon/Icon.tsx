@@ -84,10 +84,11 @@ export const Icon: FC<IconProps> = ({ name, theme, double = false, onClick, prop
           console.log(names.type.name, name);
           console.log(names);
           console.log(EIcon);
+          console.log(EIcon[name],'и последняя');
           
         }
         
-        return names.type.name === name
+        return names.type.name === EIcon[name]
       })}
 
     </span>
