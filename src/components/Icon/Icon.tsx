@@ -1,8 +1,7 @@
 import { FC } from 'react';
 import styles from './Icon.module.scss';
 import classNames from 'classnames';
-import { Mail } from '../icons';
-// import { Burger, Phone, Mail, Check, InfoN, SendN, GenresN, CommentN, StarN, ChevronN, EditN, SearchN, LoaderN, KeyN, UserD, FavoriteD, CloseD, PlayerD, Logo, RefreshN, VK, GitHub, Copyright } from '../icons';
+import { Burger, Phone, Mail, Check, InfoN, SendN, GenresN, CommentN, StarN, ChevronN, EditN, SearchN, LoaderN, KeyN, UserD, FavoriteD, CloseD, PlayerD, Logo, RefreshN, VK, GitHub, Copyright } from '../icons';
 // import Mail from '../../assets/mail.svg?react'
 // import MailIcon from '../../assets/mail.svg?react'
 
@@ -43,36 +42,34 @@ interface IconProps {
   prop?: string
 }
 
-// export const Icon: FC<IconProps> = ({ name, theme, double = false, onClick, prop }) => {
-export const Icon: FC<IconProps> = ({ name, theme, onClick, prop }) => {
-  // const componentArray = [
-  //   <Burger />,
-  //   <Mail />,
-  //   <Phone />,
-  //   <Copyright />,
-  //   <Check />,
-  //   <InfoN />,
-  //   <SendN />,
-  //   <GenresN />,
-  //   <CommentN />,
-  //   <StarN />,
-  //   <ChevronN />,
-  //   <EditN />,
-  //   <SearchN />,
-  //   <LoaderN />,
-  //   <KeyN />,
-  //   <UserD double={double} />,
-  //   <FavoriteD double={double} />,
-  //   <CloseD double={double} />,
-  //   <PlayerD double={double} />,
-  //   <Logo />,
-  //   <RefreshN />,
-  //   <VK />,
-  //   <GitHub />
-  // ]
+export const Icon: FC<IconProps> = ({ name, theme, double = false, onClick, prop }) => {
+// export const Icon: FC<IconProps> = ({ name, theme, onClick, prop }) => {
   const componentArray = [
+    <Burger />,
     <Mail />,
+    <Phone />,
+    <Copyright />,
+    <Check />,
+    <InfoN />,
+    <SendN />,
+    <GenresN />,
+    <CommentN />,
+    <StarN />,
+    <ChevronN />,
+    <EditN />,
+    <SearchN />,
+    <LoaderN />,
+    <KeyN />,
+    <UserD double={double} />,
+    <FavoriteD double={double} />,
+    <CloseD double={double} />,
+    <PlayerD double={double} />,
+    <Logo />,
+    <RefreshN />,
+    <VK />,
+    <GitHub />
   ]
+
 
   const style = classNames(
     styles[`${theme ? 'theme' : 'noTheme'}`], `${prop ? prop : ''}`, styles.display
@@ -81,7 +78,7 @@ export const Icon: FC<IconProps> = ({ name, theme, onClick, prop }) => {
   return (
     <span className={style} onClick={onClick} >
 
-      {/* {componentArray.find(names => {
+      {componentArray.find(names => {
         if(name === 'Mail'){
           console.log(names.type.name, name);
           console.log(names);
@@ -89,11 +86,8 @@ export const Icon: FC<IconProps> = ({ name, theme, onClick, prop }) => {
         }
         
         return names.type.name === name
-      })} */}
-      {componentArray.find(names => {
-        console.log(names.type.name, name);
-        return names.type.name === name
       })}
+
     </span>
   )
 };
