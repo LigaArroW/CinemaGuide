@@ -18,7 +18,7 @@ import { createName } from '../../util/createName';
 
 
 interface LoginProps {
-  // close: () => void
+
 }
 
 export const Login: FC<LoginProps> = () => {

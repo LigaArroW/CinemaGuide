@@ -2,11 +2,10 @@ import { FC } from 'react';
 import styles from './Icon.module.scss';
 import classNames from 'classnames';
 import { Burger, Phone, Mail, Check, InfoN, SendN, GenresN, CommentN, StarN, ChevronN, EditN, SearchN, LoaderN, KeyN, UserD, FavoriteD, CloseD, PlayerD, Logo, RefreshN, VK, GitHub, Copyright } from '../icons';
-// import Mail from '../../assets/mail.svg?react'
-// import MailIcon from '../../assets/mail.svg?react'
 
 
-// @vite-ignore
+
+
 export enum EIcon {
   Burger = 'Burger',
   Mail = 'Mail',
@@ -100,33 +99,6 @@ const renderComponent = (name: EIcon, double = false) => {
 
 
 export const Icon: FC<IconProps> = ({ name, theme, double = false, onClick, prop }) => {
-  // export const Icon: FC<IconProps> = ({ name, theme, onClick, prop }) => {
-  // const componentArray = [
-  //   <Burger />,
-  //   <Mail />,
-  //   <Phone />,
-  //   <Copyright />,
-  //   <Check />,
-  //   <InfoN />,
-  //   <SendN />,
-  //   <GenresN />,
-  //   <CommentN />,
-  //   <StarN />,
-  //   <ChevronN />,
-  //   <EditN />,
-  //   <SearchN />,
-  //   <LoaderN />,
-  //   <KeyN />,
-  //   <UserD double={double} />,
-  //   <FavoriteD double={double} />,
-  //   <CloseD double={double} />,
-  //   <PlayerD double={double} />,
-  //   <Logo />,
-  //   <RefreshN />,
-  //   <VK />,
-  //   <GitHub />
-  // ]
-
 
   const style = classNames(
     styles[`${theme ? 'theme' : 'noTheme'}`], `${prop ? prop : ''}`, styles.display
@@ -134,17 +106,6 @@ export const Icon: FC<IconProps> = ({ name, theme, double = false, onClick, prop
 
   return (
     <span className={style} onClick={onClick} >
-
-      {/* {componentArray.find(names => {
-        if (name === 'Mail') {
-          console.log(names.type.name, name);
-          console.log(names);
-
-
-        }
-
-        return names.type.name === EIcon[name]
-      })} */}
       {renderComponent(name, double)}
     </span>
   )
