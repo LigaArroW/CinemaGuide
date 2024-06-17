@@ -1,9 +1,10 @@
 import { FC } from 'react';
 import styles from './Icon.module.scss';
 import classNames from 'classnames';
+import { Mail } from '../icons';
 // import { Burger, Phone, Mail, Check, InfoN, SendN, GenresN, CommentN, StarN, ChevronN, EditN, SearchN, LoaderN, KeyN, UserD, FavoriteD, CloseD, PlayerD, Logo, RefreshN, VK, GitHub, Copyright } from '../icons';
 // import Mail from '../../assets/mail.svg?react'
-import MailIcon from '../../assets/mail.svg?react'
+// import MailIcon from '../../assets/mail.svg?react'
 
 // eslint-disable-next-line react-refresh/only-export-components
 export enum EIcon {
@@ -86,7 +87,7 @@ export const Icon: FC<IconProps> = ({ theme,  onClick, prop }) => {
         
         return names.type.name === name
       })} */}
-      <MailIcon />
+      <Mail/>
     </span>
   )
 };
