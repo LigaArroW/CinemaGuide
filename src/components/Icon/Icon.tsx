@@ -2,6 +2,7 @@ import { FC } from 'react';
 import styles from './Icon.module.scss';
 import classNames from 'classnames';
 import { Burger, Mail, Phone,  Check, InfoN, SendN, GenresN, CommentN, StarN, ChevronN, EditN, SearchN, LoaderN, KeyN, UserD, FavoriteD, CloseD, PlayerD, Logo, RefreshN, VK, GitHub, Copyright } from '../icons';
+import { defineAsyncComponent } from 'vue';
 
 
 
