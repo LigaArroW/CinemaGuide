@@ -44,7 +44,7 @@ interface IconProps {
 }
 
 // export const Icon: FC<IconProps> = ({ name, theme, double = false, onClick, prop }) => {
-export const Icon: FC<IconProps> = ({ theme,  onClick, prop }) => {
+export const Icon: FC<IconProps> = ({ name, theme, onClick, prop }) => {
   // const componentArray = [
   //   <Burger />,
   //   <Mail />,
@@ -70,6 +70,9 @@ export const Icon: FC<IconProps> = ({ theme,  onClick, prop }) => {
   //   <VK />,
   //   <GitHub />
   // ]
+  const componentArray = [
+    <Mail />,
+  ]
 
   const style = classNames(
     styles[`${theme ? 'theme' : 'noTheme'}`], `${prop ? prop : ''}`, styles.display
@@ -87,7 +90,10 @@ export const Icon: FC<IconProps> = ({ theme,  onClick, prop }) => {
         
         return names.type.name === name
       })} */}
-      <Mail/>
+      {componentArray.find(names => {
+        console.log(names.type.name, name);
+        return names.type.name === name
+      })}
     </span>
   )
 };
