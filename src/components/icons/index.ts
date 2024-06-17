@@ -1,5 +1,5 @@
 export * from './Burger'
-export * from './Mail'
+// export * from './Mail'
 export * from './Phone'
 export * from './Copyright'
 export * from './Check'
