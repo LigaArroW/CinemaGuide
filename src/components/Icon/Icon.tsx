@@ -83,6 +83,7 @@ export const Icon: FC<IconProps> = ({ name, theme, double = false, onClick, prop
         if(name === 'Mail'){
           console.log(names.type.name, name);
           console.log(names);
+          console.log(EIcon);
           
         }
         
