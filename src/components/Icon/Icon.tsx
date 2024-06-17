@@ -5,7 +5,7 @@ import { Burger, Phone, Mail, Check, InfoN, SendN, GenresN, CommentN, StarN, Che
 // import Mail from '../../assets/mail.svg?react'
 // import MailIcon from '../../assets/mail.svg?react'
 
-// eslint-disable-next-line react-refresh/only-export-components
+
 // @vite-ignore
 export enum EIcon {
   Burger = 'Burger',

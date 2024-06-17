@@ -5,11 +5,15 @@ import svgr from 'vite-plugin-svgr'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  optimizeDeps: {
+    include: [],
+    exclude: [],
+  },
   plugins: [react(),
   svgr({
     svgrOptions: {
       icon: true,
-      
+
     },
   })
   ],
