@@ -6,7 +6,21 @@ import svgr from 'vite-plugin-svgr'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react(),
-    svgr()
+  svgr({
+    svgrOptions: {
+      icon: true,
+    },
+  })
   ],
   base: '/CinemaGuide/',
+  build: {
+    rollupOptions: {
+      external: /^@svgr\/icon/,
+      output: {
+        assetFileNames: 'icons/[name].[ext]',
+        chunkFileNames: 'chunks/[name]-[hash].js',
+        entryFileNames: '[name]-[hash].js',
+      },
+    },
+  },
 })
