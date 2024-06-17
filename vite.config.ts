@@ -13,14 +13,14 @@ export default defineConfig({
   })
   ],
   base: '/CinemaGuide/',
-  // build: {
-  //   rollupOptions: {
-  //     external: /^@svgr\/icon/,
-  //     output: {
-  //       assetFileNames: 'icons/[name].[ext]',
-  //       chunkFileNames: 'chunks/[name]-[hash].js',
-  //       entryFileNames: '[name]-[hash].js',
-  //     },
-  //   },
-  // },
+  build: {
+    rollupOptions: {
+      external: /^@svgr\/icon/,
+      output: {
+        assetFileNames: 'icons/[name].[ext]',
+        chunkFileNames: 'chunks/[name]-[hash].js',
+        entryFileNames: '[name]-[hash].js',
+      },
+    },
+  },
 })
