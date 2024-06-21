@@ -42,7 +42,7 @@ function App() {
       <Header />
       <Routes>
         <Route path='/' element={<Navigate to='/main' replace />} />
-        <Route path='main' element={<Main />} />
+        <Route path='/main' element={<Main />} />
         <Route path='genres'>
           <Route index element={<Genres />} />
           <Route path=':genre' element={<GenreFilms />} />
